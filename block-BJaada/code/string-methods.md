@@ -208,3 +208,16 @@ console.log(strCopy);// expected output: Array ["The quick brown fox jumps over 
 The split() method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array.  The division is done by searching for a pattern; where the pattern is provided as the first parameter in the method's call. 
 
 18. `substring`
+- Parameter:
+accept number  data type inside substring method 
+return string data type
+When we pass one string inside of substring then it is assum last value is str.length-1 and the value do not show.
+when we pass negative indexes at last value inside substring method then automatic detect and arrenge them and given string lower to hightes indexes
+- Return: return string data type and the value which containing the specified part of given string
+```js
+const str = 'Mozilla';
+console.log(str.substring(1, 3));// expected output: "oz"
+console.log(str.substring(2));//"zilla"
+```
+- `substring`
+The substring() method returns the part of the string between the start and end indexes, or to the end of the string
