@@ -15,11 +15,11 @@ console.log(fruits[1])
 // If the element at 0 index is undefined and index 1 is 'Banana' shift all the values to one lower index (use shift method)
 console.log(fruits.shift())
 // Add a new element to the start ('Guava') and shift the index of all other to one higher value
-fruits.unshift('Guava')
+fruits.splice(0,0,'Guava')
 // Add a new element to the start ('Dragon Fruit') and shift the index of all other to one higher value
-fruits.unshift('Dragon Fruit')
+fruits.splice(0,0,'Dragon Fruit')
 // Log true or false based on the value at index 0 and 1 is 'Dragon Fruit' and 'Guava' or not
-
+console.log(fruits[0]==='Dragon Fruit' & fruits[1]==='Guava' ? true : false);
 // Update the value of index 1 to `Pears`
 fruits[1]="Pears";
 // Add the 'Kiwi' and 'Lemon' to the index 1 and 2 and shift the other element to next index (use splice to add element)
@@ -43,12 +43,13 @@ fruits.forEach(element => {
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
 let lowercaseFruits = fruits.map(element => element.toLowerCase())
 // Convert all fruits name into uppercase and store in new array named uppercaseFruits
+let uppercaseFruits = fruits.map(element => element.toUpperCase())
 let numbers = [1, 2, [3, 4]];
 let numbersTwo = [1, 2, [3, 4, [5, 6]]];
 let numbersThree = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
 
 // Convert the numbers array to one level element. Remove sub-arrays to individual elements and log them
-console.log(numbers.flat(1))
+console.log(numbers.flat(1));
 // Convert the numbersTwo array to one level element. Remove all sub-arrays to individual elements and log them.
 console.log(numbersTwo.flat(2));
 // (for multiple level flat accepts argument by default it's 1 `array.flat(2)`)
