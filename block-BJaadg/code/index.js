@@ -12,11 +12,11 @@ let indexOfIs = quote.indexOf('is');
 /*
 2. Find the character at the index indexOfIs (Problem 1) in quote.
 */
-quote[indexOfIs]
+quote.charAt(indexOfIs);
 /*
 3. Log the message saying `The index of first is in quote is 7`
 */
-console.log(`The index of first is in quoto is ${indexOfIs}`);
+console.log(`The index of first is in quoto is ${quote.charAt(indexOfIs)}`);
 /*
 4. Log the message for first 6 characters of quote like this.
   The character at index 0 is 'T'
@@ -26,11 +26,8 @@ console.log(`The index of first is in quoto is ${indexOfIs}`);
   The character at index 4 is 'e'
   The character at index 5 is ' '
 */
-let index = 0;
-let text = quote.slice(0,6);
-for(let i=0 ; i < quote.slice(0,5).length; i++){
-  console.log(`The character at index ${index} is ${text[i]}`)
-  index+=1;
+for(let i=0 ; i < 6; i++){
+  console.log(`The character at index ${i} is ${quote[i]}`);
 }
 /*
 5. Using the variable from , to and quote variable dispaly this message
@@ -69,7 +66,7 @@ console.log(quoteSplitted.join(' '))
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
-console.log(quote.indexOf('o',2));
+console.log(quote.indexOf('o',8));
 /*
 13. Find the last index of letter "a" in quote.
 */
@@ -77,6 +74,7 @@ console.log(quote.lastIndexOf('a'));
 /*
 14. Find the second last index of letter "a" in quote.
 */
+console.log(quote.lastIndexOf('a', quote.lastIndexOf('a')-1))
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
 Example: "Hello" (convert to 10 characters) => "Hello....."
@@ -86,7 +84,7 @@ console.log(quote.padEnd(70, '.'));
 /*
 16. Do same as (15) but the ... should come in start. Store the output in a new variable
 */
-console.log(quote.padStart(15, '.'));
+console.log(quote.padStart(15+quote.length, '.'));
 /*
 17. Log the repeat of "Hello World!" 10 times.
 */
