@@ -12,12 +12,9 @@ Clone the array before using sort method: [...arr]
 
 // - Find the index of `101` in numbers
 console.log(numbers.indexOf(101));
-
 // - Find the last index of `9` in numbers
 console.log(numbers.lastIndexOf(9));
-
 // - Convert value of strings array into a sentance like "This is a collection of words"
-
 console.log(strings.join(' '));
 // - Add two new words in the strings array "called" and "sentance"
  let newstrings = [...strings]
@@ -54,16 +51,26 @@ let evenNumber = numbers.filter(element => element%2===0)
 // - Find all the odd numbers
 let oddNumber = numbers.filter(element => element%2!==0)
 // - Place a new word at the start of the array use (unshift)
-newstrings.unshift('ravi');
+newstrings.unshift('new ravi');
 // - Make a subset of numbers array [18,9,7,11]
 let subsetNumbers = numbers.slice(3,7);
 // - Make a subset of strings array ['a','collection']
 let subsetStrings = strings.slice(2,4)
 // - Replace 12 & 18 with 1221 and 1881
-let replaceNumber1 = numbers.indexOf(12);
-numbers[replaceNumber1]=1221;
-let replaceNumber2 = numbers.indexOf(18);
-numbers[replaceNumber2] = 1881;
+// let replaceNumber1 = numbers.indexOf(12);
+// numbers[replaceNumber1]=1221;
+// let replaceNumber2 = numbers.indexOf(18);
+// numbers[replaceNumber2] = 1881;
+numbers.map(num => {
+  if(num===12){
+    return 1221;
+  } else if(num===18){
+    return 1881
+  }else{
+    return num;
+  }
+})
+
 // - Replace words in strings array with the length of the word
 let stringsLength = strings.map(element => element.length);
 // - Find the sum of the length of words using above question
@@ -86,9 +93,9 @@ let fullNames = customers.map(element => `${element.firstname} ${element.lastnam
 let sortName = [...fullNames].sort();
 // - Create a new array that contains only user who has at least one vowel in the firstname.
 let vowelNameContains = firstNames.filter(element => {
-  for (const e of element) {
-    if(e==='a' || e==='e' || e==='i' || e==="o" || e==="u"){
-      return element;
-    }
-  }
+ if( element.toLowerCase().includes('a') || element.toLowerCase().includes('e') || element.toLowerCase().includes('i') || element.toLowerCase().includes('o') || element.toLowerCase().includes('u')){
+   return true
+ }else{
+   return false;
+ }
 } );
