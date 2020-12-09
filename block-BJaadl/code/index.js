@@ -17,52 +17,23 @@ console.log(findLongestWord(words))
 // - Convert the above array "words" into an array of length of word instead of word.
 words.map(element => element.length);
 // - Create a new array that only contains word with atleast one vowel.
-let vowelWorld = words.filter(element => {
-  if(
+function checkVowel(element) {
+  return  (
     element.toLowerCase().includes('a') || 
     element.toLowerCase().includes('e') || 
     element.toLowerCase().includes('i') || 
     element.toLowerCase().includes('o') || 
     element.toLowerCase().includes('u') 
-  ){
-    return true;
-  }
-})
+  )
+}
+let vowelWorld = words.filter(element => checkVowel(element))
 // - Find the index of the word "rhythm"
-let rhythm = words.reduce((a, b) => {
-  if(b ==='rhythm') {
-    return b.length;
-  }
-},0)
+words.findIndex(element => element==='rhythm')
 // - Create a new array that contians words not starting with vowel.
-let noStartVowelWorld = words.filter(element => {
-  if(
-    element.startsWith('a') ||
-    element.startsWith('e') ||
-    element.startsWith('i') ||
-    element.startsWith('o') ||
-    element.startsWith('u')
-  ){
-    return false;
-  }else{
-   return true
-  }
-})
+let noStartVowelWorld = words.filter(element => !checkVowel(element[0]))
 // - Create a new array that contianse words not ending with vowel
 
-let noEndVowelWorld = words.filter(element => {
-  if(
-    element.endsWith('a') || 
-    element.endsWith('e') || 
-    element.endsWith('i') || 
-    element.endsWith('o') || 
-    element.endsWith('u') 
-  ){
-    return false ;
-  }else{
-    return true
-  }
-})
+let noEndVowelWorld = words.filter(element => !checkVowel(element[element.length -1]))
 
 let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
@@ -79,9 +50,9 @@ let trueForEvenOdd = numbers.map(element => element%2===0 ? true : false);
 // - Sort the above number in assending order.
 [...numbers].sort((a, b) => a - b )
 // - Does sort mutate the original array?
-
+// yes
 // - Find the sum of the numbers in the array.
-
+let sum =  numbers.reduce((a,b) => a + b , 0);
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
 
 function averageNumbers(arr) {
