@@ -1,35 +1,78 @@
 // NOTE: You can not use reduce methods to solve this exercise
+console.log(got);
 
 function countAllPeople() {
-  // your code goes here
+  let count = 0;
+  for (const house of  got.houses) {
+    count += house.people.length
+  }
+  return count
 }
 
 function peopleByHouses() {
-  // your code goes here
+  let obj = {};
+  for (const house of got.houses) {
+    obj [house.name] = house.people.length
+  }
+  return obj
 }
 
 function everyone() {
-  // your code goes here
+  let arr = [];
+  for (const house of got.houses) {
+   house.people.forEach(element => arr.push(element.name))
+  }
+  return arr
 }
 
 function nameWithS() {
-  // your code goes here
+  let arr = [];
+  for (const house of got.houses) {
+   house.people.forEach(element => {if(element.name.toLowerCase().includes('s')){ return arr.push(element.name)}})
+  }
+  return arr
 }
 
 function nameWithA() {
-  // your code goes here
+  let arr = [];
+  for (const house of got.houses) {
+   house.people.forEach(element => {if(element.name.toLowerCase().includes('a')){ return arr.push(element.name)}})
+  }
+  return arr
 }
 
 function surnameWithS() {
-  // your code goes here
+  let arr = [];
+  for (const house of got.houses) {
+    house.people.forEach(element => {
+      let nameArr = element.name.split(' ');
+      if(nameArr[1].toLowerCase().startsWith('s')){
+        return arr.push(element.name);
+      }
+    })
+  }
+  return arr;
 }
 
 function surnameWithA() {
-  // your code goes here
+  let arr = [];
+  for (const house of got.houses) {
+    house.people.forEach(element => {
+      let nameArr = element.name.split(' ');
+      if(nameArr[1].toLowerCase().startsWith('a')){
+        return arr.push(element.name);
+      }
+    })
+  }
+  return arr;
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+  let obj = {};
+  for (const house of got.houses) {
+    obj[house.name] = house.people.map(ele => ele.name);
+  }
+  return obj;
 }
 
 // Testing your result after writing your function
